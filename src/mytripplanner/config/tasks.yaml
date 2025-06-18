@@ -1,0 +1,53 @@
+destination_research_task:
+  description: >
+    You are gathering key destination data for {location} for a trip lasting {days} days.
+    Use web tools and search APIs to collect information on safety, transportation, weather, and top attractions relevant to a {days}-day trip.
+  expected_output: >
+    A well-organized summary of factual data for {location}, considering a {days}-day stay. Suitable for comparing travel destinations.
+  agent: destination_data_researcher_agent
+  output_file: output/destination_data.md
+
+local_insight_task:
+  description: >
+    You are providing local insights for {location} for a {days}-day visit.
+    Share insider tips, cultural etiquette, events, hidden gems, and must-visit spots that only a local would know—especially those relevant to a {days}-day stay.
+  expected_output: >
+    A locally-authentic, culturally-aware summary of travel tips and suggestions for {location} for a {days}-day trip.
+  agent: local_expert_agent
+  context:
+    - destination_research_task
+  output_file: output/local_insights.md
+
+itinerary_task:
+  description: >
+    You are designing a day-by-day itinerary for a {days}-day trip to {location}, tailored to the user's preferences such as duration, interests, and travel style.
+  expected_output: >
+    A personalized travel itinerary with daily plans for {days} days, including suggested activities and time slots for {location}.
+  agent: itinerary_planner_agent
+  context:
+    - local_insight_task
+  output_file: output/itinerary.md
+
+budget_estimate_task:
+  description: >
+    You are estimating the travel costs for a {days}-day trip to {location}, including transportation, stay, meals, and local experiences—tailored to the user’s budget and group size.
+  expected_output: >
+    A detailed and realistic budget estimate categorized by expense types for visiting {location} for {days} days.
+  agent: budget_advisor_agent
+  context:
+    - itinerary_task
+  output_file: output/budget_estimate.md
+
+travel_summary_task:
+  description: >
+    You are generating a comprehensive travel report for {location} based on a {days}-day trip using the outputs from all other agents.
+    Combine destination data, local insights, itinerary, and budget into a well-structured, easy-to-read summary.
+  expected_output: >
+    A complete travel report for {location} covering a {days}-day trip.using the context.
+  agent: travel_summary_agent
+  context:
+    - destination_research_task
+    - local_insight_task
+    - itinerary_task
+    - budget_estimate_task
+  output_file: output/final_travel_report.md
