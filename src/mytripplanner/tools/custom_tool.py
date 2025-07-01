@@ -1,7 +1,7 @@
 from crewai.tools import BaseTool
 from typing import Type
 from pydantic import BaseModel, Field
-from src.mytripplanner.utilies.weather_api import get_day_weather_forecast
+from utilies.weather_api import get_day_weather_forecast
 import json
 class WeatherForecastToolInput(BaseModel):
     location: str = Field(..., description="Location for the weather forecast (city name, coordinates, etc.)")

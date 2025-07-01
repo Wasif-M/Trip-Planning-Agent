@@ -52,3 +52,27 @@ For support, questions, or feedback regarding the Mytripplanner Crew or crewAI.
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
+
+# Web Frontend
+
+A modern Flask-based web frontend is available in the `web/` directory inside this project. It provides:
+- A homepage for users to enter destination and days
+- Live agent progress updates
+- A final, well-structured travel report
+
+## Running the Web App
+
+1. Navigate to the `web/` directory:
+   ```bash
+   cd web
+   ```
+2. Install requirements (if needed):
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the Flask app:
+   ```bash
+   flask run
+   ```
+
+The app will be available at http://localhost:5000

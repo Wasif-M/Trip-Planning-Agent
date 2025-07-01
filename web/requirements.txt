@@ -1,0 +1,3 @@
+Flask
+requests
+# UI uses Bootstrap, FontAwesome, and Animate.css via CDN 

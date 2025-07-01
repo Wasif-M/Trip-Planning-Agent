@@ -1,0 +1,53 @@
+body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+.bg-gradient {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%) !important;
+}
+.card {
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+.card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    transform: translateY(-4px) scale(1.01);
+}
+.btn-primary, .btn-success, .btn-outline-primary {
+    border-radius: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s;
+}
+input[type="text"], input[type="number"] {
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #b6c6e0;
+    transition: border-color 0.2s;
+}
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #5b9bd5;
+    outline: none;
+}
+.navbar {
+    border-radius: 0 0 1rem 1rem;
+}
+.footer {
+    border-radius: 1rem 1rem 0 0;
+    font-size: 1rem;
+}
+.section-card {
+    background: #f8fafc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-left: 4px solid #5b9bd5;
+}
+.agent-stepper small {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #5b9bd5;
+}
+.animate__animated {
+    animation-duration: 0.8s;
+} 

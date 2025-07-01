@@ -5,7 +5,6 @@ destination_research_task:
   expected_output: >
     A well-organized summary of factual data for {location}, considering a {days}-day stay. Suitable for comparing travel destinations.
   agent: destination_data_researcher_agent
-  output_file: output/destination_data.md
 
 local_insight_task:
   description: >
@@ -16,7 +15,6 @@ local_insight_task:
   agent: local_expert_agent
   context:
     - destination_research_task
-  output_file: output/local_insights.md
 
 itinerary_task:
   description: >
@@ -26,17 +24,16 @@ itinerary_task:
   agent: itinerary_planner_agent
   context:
     - local_insight_task
-  output_file: output/itinerary.md
 
 budget_estimate_task:
   description: >
     You are estimating the travel costs for a {days}-day trip to {location}, including transportation, stay, meals, and local experiences—tailored to the user’s budget and group size.
   expected_output: >
+    Budget should be in Pakistani Rupees.
     A detailed and realistic budget estimate categorized by expense types for visiting {location} for {days} days.
   agent: budget_advisor_agent
   context:
     - itinerary_task
-  output_file: output/budget_estimate.md
 
 travel_summary_task:
   description: >
