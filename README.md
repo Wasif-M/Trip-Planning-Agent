@@ -1,82 +1,67 @@
-<<<<<<< HEAD
-# Mytripplanner Crew
+# Multi-Agent Trip Planner
 
-Welcome to the Mytripplanner Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+## Overview
+Multi-Agent Trip Planner is an AI-powered travel assistant that crafts personalized travel plans using a team of specialized agents. Each agent focuses on a unique aspect of your journey, working together to deliver a seamless, real-time, and budget-friendly travel experience.
 
-## Installation
+---
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## Features
+- **Real-Time Destination Search:** Gathers up-to-date information about your chosen location, including top sights and local culture.
+- **Live Weather Updates:** Integrates current weather forecasts for your destination to help you plan each day.
+- **Local Advice:** Provides insider tips, hidden gems, and authentic experiences from a local perspective.
+- **Event-Based Itinerary:** Divides your trip into distinct events and activities, creating a day-by-day schedule.
+- **Budget Planning:** Estimates costs for every aspect of your trip, helping you manage your budget.
+- **Comprehensive Travel Report:** Compiles all findings into a clear, easy-to-follow travel report.
 
-First, if you haven't already, install uv:
+---
 
-```bash
-pip install uv
+## Agent Flow
+1. **Destination Data Researcher:** Performs real-time web search to gather essential information about your destination.
+2. **Weather Updater:** Fetches the latest weather forecasts for your travel dates.
+3. **Local Expert:** Offers local advice, hidden gems, and unique experiences.
+4. **Itinerary Planner:** Organizes your trip into daily events and activities.
+5. **Budget Advisor:** Calculates estimated costs for each event and the overall trip.
+6. **Travel Summary:** Compiles all data into a personalized travel report.
+
+**Flow:**
+```
+Destination & Days → Real-Time Search & Weather → Local Advice → Event-Based Itinerary → Budget Plan → Personalized Trip Report
 ```
 
-Next, navigate to your project directory and install the dependencies:
+---
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+## Setup Instructions
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/mytripplanner/config/agents.yaml` to define your agents
-- Modify `src/mytripplanner/config/tasks.yaml` to define your tasks
-- Modify `src/mytripplanner/crew.py` to add your own logic, tools and specific args
-- Modify `src/mytripplanner/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the mytripplanner Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The mytripplanner Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the Mytripplanner Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
-
-# Web Frontend
-
-A modern Flask-based web frontend is available in the `web/` directory inside this project. It provides:
-- A homepage for users to enter destination and days
-- Live agent progress updates
-- A final, well-structured travel report
-
-## Running the Web App
-
-1. Navigate to the `web/` directory:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Wasif-M/Trip-Planning-Agent.git
+   cd Trip-Planning-Agent/mytripplanner
+   ```
+2. **Install dependencies:**
+   ```bash
+   pip install -r web/requirements.txt
+   ```
+3. **Run the application:**
    ```bash
    cd web
+   python app.py
    ```
-2. Install requirements (if needed):
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the Flask app:
-   ```bash
-   flask run
-   ```
+4. **Open your browser and visit:**
+   [http://localhost:5000](http://localhost:5000)
 
-The app will be available at http://localhost:5000
-=======
-# Trip Planner Agent
->>>>>>> 697ec64526bb1aafd101980e6cbec3fb1c545230
+---
+
+## Usage
+- Enter your destination and number of days on the home page.
+- The system will show real-time progress as each agent completes its task.
+- Once finished, you'll receive a detailed, event-based itinerary and budget report.
+
+---
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for improvements, bug fixes, or new features.
+
+---
+
+## License
+This project is licensed under the MIT License.
