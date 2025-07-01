@@ -1,8 +1,3 @@
-# Just use your original crew.py file - no changes needed!
-# The enhanced version was trying to modify CrewAI internals that don't exist.
-
-# Your original crew.py works perfectly:
-
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import SerperDevTool
@@ -41,7 +36,7 @@ class Mytripplanner():
     def budget_advisor_agent(self)->Agent:
         return Agent(
             config=self.agents_config['budget_advisor_agent'],
-            verbose=True  # Fixed: was "Verbose" (capital V)
+            verbose=True  
         )
     
     @agent

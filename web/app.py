@@ -69,7 +69,7 @@ class CrewOutputCapture:
         sys.__stdout__.write(text)
         sys.__stdout__.flush()
         
-        t
+        
         if text and len(text.strip()) > 0:
             self.detect_agent_from_output(text)
     
@@ -154,7 +154,7 @@ def run_agent_async(destination, days, session_id):
         
         print("Crew execution completed successfully")
         
-        #
+        
         progress_store[session_id].update({
             'report_raw': str(results.raw),
             'report_status': 'ready',
@@ -191,7 +191,7 @@ def home():
             'progress': 0
         }
         
-        #
+        
         thread = threading.Thread(target=run_agent_async, args=(destination, days, session_id))
         thread.daemon = True  
         thread.start()
