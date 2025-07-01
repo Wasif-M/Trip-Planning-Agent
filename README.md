@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mytripplanner Crew
 
 Welcome to the Mytripplanner Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
@@ -76,3 +77,6 @@ A modern Flask-based web frontend is available in the `web/` directory inside th
    ```
 
 The app will be available at http://localhost:5000
+=======
+# Trip Planner Agent
+>>>>>>> 697ec64526bb1aafd101980e6cbec3fb1c545230
